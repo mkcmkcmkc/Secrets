@@ -1,0 +1,5 @@
+def construct_object_types(list_of_oids):
+    object_types = []
+    for oid in list_of_oids:
+        object_types.append(hlapi.ObjectType(hlapi.ObjectIdentity(oid)))
+    return object_types
