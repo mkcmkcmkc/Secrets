@@ -1,3 +1,14 @@
+#try ... except StopIteration --> In case the count the user specifies is higher
+#than the number of objects we actually have, we simply stop and return 
+#what we got so far. This is the purpose of the construct.
+#
+#Why do we return a list of dictionaries? In each get operation, 
+#we can get multiple object IDs. Thus, each dictionary will have as key the
+#object ID, and as value the value of that OID in the MIB. 
+#In case we require multiple OIDs in a single get, we will return a dictionary
+#with multiple keys. Why a list then? With get, you only retrieve the information once. However, as we will see in get bulk, we might want to get the same information many times on different instances.
+
+
 def fetch(handler, count):
     result = []
     for i in range(count):
